@@ -1,4 +1,5 @@
 import { readFileSync } from "fs";
+import path from "path";
 
 interface IConfig {
     vk: {
@@ -11,6 +12,6 @@ interface IConfig {
     },
 }
 
-const Config: IConfig = JSON.parse(readFileSync("./config.json").toString());
+const Config: IConfig = JSON.parse(readFileSync(path.resolve(__dirname, "config.json") ).toString());
 
 export default Config;
